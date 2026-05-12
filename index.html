@@ -19,6 +19,11 @@ body{background:var(--bg);color:var(--ink);font-family:'Open Sans',sans-serif;
   letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px}
 .calc-heading{font-family:'Montserrat',sans-serif;font-weight:600;font-size:1.1rem;
   color:var(--ink);margin-bottom:16px;padding-bottom:9px;border-bottom:2px solid var(--red)}
+.top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.title-block{flex:1;min-width:0}
+.source-code-link{font-size:.78rem;line-height:1.3;color:var(--blue);text-decoration:none;
+  border:1px solid rgba(44,90,160,.35);border-radius:999px;padding:4px 9px;margin-top:2px;white-space:nowrap;background:#fff}
+.source-code-link:hover{border-color:var(--blue);background:var(--blue-bg)}
 .input-panel{background:var(--bg2);border:1px solid var(--rule);border-left:3px solid var(--red);
   padding:16px 18px;margin-bottom:16px}
 .input-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
@@ -53,8 +58,13 @@ input[type="range"]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
 </style>
 </head>
 <body>
-<p class="calc-label">Interactive calculator</p>
-<h2 class="calc-heading">Positive Predictive Value and Publication Bias</h2>
+<div class="top-row">
+  <div class="title-block">
+    <p class="calc-label">Interactive calculator</p>
+    <h2 class="calc-heading">Positive Predictive Value and Publication Bias</h2>
+  </div>
+  <a class="source-code-link" href="https://github.com/Y45HV1N/ppv-publication-bias-app/tree/main" target="_blank" rel="noopener noreferrer">Source code</a>
+</div>
 
 <div class="input-panel">
   <div class="input-grid">
@@ -107,6 +117,8 @@ input[type="range"]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
   <a href="https://lakens.github.io/statistical_inferences/02-errorcontrol.html" target="_blank" rel="noopener noreferrer">Statistical Inferences</a>,
   with the source code available on
   <a href="https://github.com/Lakens/statistical_inferences" target="_blank" rel="noopener noreferrer">GitHub</a>.
+  The source code for this adapted app is available on
+  <a href="https://github.com/Y45HV1N/ppv-publication-bias-app/tree/main" target="_blank" rel="noopener noreferrer">GitHub</a>.
   The standalone HTML file, including its embedded CSS and JavaScript, was modified with the assistance of ChatGPT 5.5 Thinking because I (<a href="https://bsky.app/profile/yashvin.bsky.social" target="_blank" rel="noopener noreferrer">Yashvin Seetahul</a>) have no formal competence in web application design.
 </div>
 
