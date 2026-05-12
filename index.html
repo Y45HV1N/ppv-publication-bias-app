@@ -320,7 +320,7 @@ function drawMainSvg(values) {
   var allMaxR = Math.max(maxR, displayPubR);
   var belowY = cy + allMaxR + 26;
   var legY = belowY + 25;
-  var VH = Math.round(legY + 48);
+  var VH = Math.round(legY + 54);
 
   var ptTP = sampleIntersect(tp, cx3, cy, s3, cx1, cy, s1);
   var ptFP = sampleIntersect(fp, cx3, cy, s3, cx2, cy, s2);
@@ -393,7 +393,8 @@ function drawMainSvg(values) {
        + ' font-family="Open Sans,sans-serif" font-size="12.5" font-weight="600" fill="'+COLORS.blue+'">'
        + 'Published = '+pubTotal+' of '+N+' studies</text>';
 
-  var col0 = VW/2 - 145, col1 = VW/2 + 10;
+  // Wide fixed legend columns prevent overlap after the SVG is scaled on GitHub Pages.
+  var col0 = 100, col1 = 440;
   [
     {col: COLORS.tp, lbl: 'True positive (TP = '+tp+', published = '+values.pubTP+')'},
     {col: COLORS.fp, lbl: 'False positive (FP = '+fp+', published = '+values.pubFP+')'},
@@ -403,7 +404,7 @@ function drawMainSvg(values) {
     var lx = i % 2 === 0 ? col0 : col1;
     var ly = legY + Math.floor(i / 2) * 18;
     html += '<circle cx="'+(lx+7)+'" cy="'+(ly+1)+'" r="5" fill="'+it.col+'" fill-opacity="0.9"/>';
-    html += '<text x="'+(lx+17)+'" y="'+(ly+5)+'" font-family="Open Sans,sans-serif" font-size="10.5" fill="'+COLORS.ink2+'">'+it.lbl+'</text>';
+    html += '<text x="'+(lx+17)+'" y="'+(ly+5)+'" font-family="Open Sans,sans-serif" font-size="10.2" fill="'+COLORS.ink2+'">'+it.lbl+'</text>';
   });
 
   var svg = document.getElementById('ppvSvg');
